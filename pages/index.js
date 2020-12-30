@@ -27,7 +27,7 @@ function Home() {
     }
   }
 
-  function handleSubtractPerson() {
+  function handleRemovePerson() {
     if (isAboveMinOrigins) {
       setOriginIds(originIds.slice(0, originIds.length - 1))
     }
@@ -54,7 +54,7 @@ function Home() {
         )
       })}
       {isBelowMaxOrigins && <button className="button" onClick={handleAddPerson}>Add Person</button>}
-      {isAboveMinOrigins && <button className="button" onClick={handleSubtractPerson}>Subtract Person</button>}
+      {isAboveMinOrigins && <button className="button" onClick={handleRemovePerson}>Remove Person</button>}
       <button className="button" onClick={handleSubmit}>Find Midpoint!</button>
       <ol>
         {results.slice(0, 5).map(result => {
