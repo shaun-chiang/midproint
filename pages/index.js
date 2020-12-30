@@ -18,7 +18,6 @@ function Home() {
 
   function handleSubmit() {
     setResults(findMidpointCandidates(originIds))
-    console.log(findMidpointCandidates(originIds))
     event.preventDefault()
   }
 
