@@ -1,20 +1,18 @@
-## Getting Started
+# Midrpoint
 
-First, run the development server:
+A simple webpage to figure out a meeting point for up to 8 of us using the Singapore MRT.
 
-```bash
-npm run dev
-# or
-yarn dev
+Generated with Next.js, written in React.
+
+Deployed at https://midrpoint.vercel.app/
+
+## Local Setup
+
+```
+npm install
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Method
+Run Djikstra for each starting point, then calculate mean and standard deviation of each destination.
+Sort results (ascending) by mean and then standard deviation.
