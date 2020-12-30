@@ -14,5 +14,8 @@ npm start
 ```
 
 ## Method
+Given travel time estimates from MRT boards, construct an undirected weighted graph (adjacency list) with travel time as weights. Internal transfers are treated as seperate vertices (i.e. it takes time to transfer between lines).
+
 Run Djikstra for each starting point, then calculate mean and standard deviation of each destination.
+
 Sort results (ascending) by mean and then standard deviation.
