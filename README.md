@@ -1,4 +1,4 @@
-# Midproint
+# <font color="red">M</font>idp<font color="red">r</font>oin<font color="red">t</font>
 
 A simple webpage to figure out a meeting point for up to 8 of us using the Singapore MRT.
 
