@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Midproint - Find Midpoint of MRTs</h1>
+      <h1><font color="red">M</font>idp<font color="red">r</font>oin<font color="red">t</font> - Find Midpoint of MRT stations</h1>
       {originIds.map((originId, index) => {
         return (
           <label className="origin-label" key={index}>
@@ -61,7 +61,7 @@ function Home() {
           return (<li>{
             `${result.stationId} ${getStationName(result.stationId)}`}
             <ul>
-              <li>{`${result.stationTimings.map(timing => timing + " minutes").join(', ') + ' respectively'}`}</li>
+              <li>{`${result.stationTimings.map((timing, index) => `P${index + 1}: ${timing} mins`).join(', ')}`}</li>
             </ul>
           </li>)
         })}
