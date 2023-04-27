@@ -39,7 +39,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>Midrpoint - Find Midpoint of MRTs</h1>
+      <h1>Midproint - Find Midpoint of MRTs</h1>
       {originIds.map((originId, index) => {
         return (
           <label className="origin-label" key={index}>

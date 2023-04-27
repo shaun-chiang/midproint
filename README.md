@@ -1,10 +1,10 @@
-# Midrpoint
+# Midproint
 
 A simple webpage to figure out a meeting point for up to 8 of us using the Singapore MRT.
 
 Generated with Next.js, written in React.
 
-Deployed at https://midrpoint.vercel.app/
+Deployed at https://midproint.vercel.app/
 
 ## Local Setup
 
