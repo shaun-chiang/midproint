@@ -1,108 +1,108 @@
 const mrtStations = [
-  // {
-  //   "id": "NS1",
-  //   "name": "Jurong East"
-  // },
-  // {
-  //   "id": "NS2",
-  //   "name": "Bukit Batok"
-  // },
-  // {
-  //   "id": "NS3",
-  //   "name": "Bukit Gombak"
-  // },
-  // {
-  //   "id": "NS4",
-  //   "name": "Choa Chu Kang"
-  // },
-  // {
-  //   "id": "NS5",
-  //   "name": "Yew Tee"
-  // },
-  // {
-  //   "id": "NS7",
-  //   "name": "Kranji"
-  // },
-  // {
-  //   "id": "NS8",
-  //   "name": "Marsiling"
-  // },
-  // {
-  //   "id": "NS9",
-  //   "name": "Woodlands"
-  // },
-  // {
-  //   "id": "NS10",
-  //   "name": "Admiralty"
-  // },
-  // {
-  //   "id": "NS11",
-  //   "name": "Sembawang"
-  // },
-  // {
-  //   "id": "NS13",
-  //   "name": "Yishun"
-  // },
-  // {
-  //   "id": "NS14",
-  //   "name": "Khatib"
-  // },
-  // {
-  //   "id": "NS15",
-  //   "name": "Yio Chu Kang"
-  // },
-  // {
-  //   "id": "NS16",
-  //   "name": "Ang Mo Kio"
-  // },
-  // {
-  //   "id": "NS17",
-  //   "name": "Bishan"
-  // },
-  // {
-  //   "id": "NS18",
-  //   "name": "Braddell"
-  // },
-  // {
-  //   "id": "NS19",
-  //   "name": "Toa Payoh"
-  // },
-  // {
-  //   "id": "NS20",
-  //   "name": "Novena"
-  // },
-  // {
-  //   "id": "NS21",
-  //   "name": "Newton"
-  // },
-  // {
-  //   "id": "NS22",
-  //   "name": "Orchard"
-  // },
-  // {
-  //   "id": "NS23",
-  //   "name": "Somerset"
-  // },
-  // {
-  //   "id": "NS24",
-  //   "name": "Dhoby Ghaut"
-  // },
-  // {
-  //   "id": "NS25",
-  //   "name": "City Hall"
-  // },
-  // {
-  //   "id": "NS26",
-  //   "name": "Raffles Place"
-  // },
-  // {
-  //   "id": "NS27",
-  //   "name": "Marina Bay"
-  // },
-  // {
-  //   "id": "NS28",
-  //   "name": "Marina South Pier"
-  // },
+  {
+    "id": "NS1",
+    "name": "Jurong East"
+  },
+  {
+    "id": "NS2",
+    "name": "Bukit Batok"
+  },
+  {
+    "id": "NS3",
+    "name": "Bukit Gombak"
+  },
+  {
+    "id": "NS4",
+    "name": "Choa Chu Kang"
+  },
+  {
+    "id": "NS5",
+    "name": "Yew Tee"
+  },
+  {
+    "id": "NS7",
+    "name": "Kranji"
+  },
+  {
+    "id": "NS8",
+    "name": "Marsiling"
+  },
+  {
+    "id": "NS9",
+    "name": "Woodlands"
+  },
+  {
+    "id": "NS10",
+    "name": "Admiralty"
+  },
+  {
+    "id": "NS11",
+    "name": "Sembawang"
+  },
+  {
+    "id": "NS13",
+    "name": "Yishun"
+  },
+  {
+    "id": "NS14",
+    "name": "Khatib"
+  },
+  {
+    "id": "NS15",
+    "name": "Yio Chu Kang"
+  },
+  {
+    "id": "NS16",
+    "name": "Ang Mo Kio"
+  },
+  {
+    "id": "NS17",
+    "name": "Bishan"
+  },
+  {
+    "id": "NS18",
+    "name": "Braddell"
+  },
+  {
+    "id": "NS19",
+    "name": "Toa Payoh"
+  },
+  {
+    "id": "NS20",
+    "name": "Novena"
+  },
+  {
+    "id": "NS21",
+    "name": "Newton"
+  },
+  {
+    "id": "NS22",
+    "name": "Orchard"
+  },
+  {
+    "id": "NS23",
+    "name": "Somerset"
+  },
+  {
+    "id": "NS24",
+    "name": "Dhoby Ghaut"
+  },
+  {
+    "id": "NS25",
+    "name": "City Hall"
+  },
+  {
+    "id": "NS26",
+    "name": "Raffles Place"
+  },
+  {
+    "id": "NS27",
+    "name": "Marina Bay"
+  },
+  {
+    "id": "NS28",
+    "name": "Marina South Pier"
+  },
   // {
   //   "id": "EW1",
   //   "name": "Pasir Ris"
@@ -567,11 +567,37 @@ const mrtStations = [
 
 const mrtStationsAdjacencyList =
 {
+  "NS1": [{ id: "NS2", cost: 3}],
+  "NS2": [{ id: "NS1", cost: 3}, { id: "NS3", cost: 2}],
+  "NS3": [{ id: "NS2", cost: 2}, { id: "NS4", cost: 3}],
+  "NS4": [{ id: "NS3", cost: 3}, { id: "NS5", cost: 3}],
+  "NS5": [{ id: "NS4", cost: 3}, { id: "NS7", cost: 4}],
+  "NS7": [{ id: "NS5", cost: 4}, { id: "NS8", cost: 3}],
+  "NS8": [{ id: "NS7", cost: 3}, { id: "NS9", cost: 2}],
+  "NS9": [{ id: "NS8", cost: 2}, { id: "NS10", cost: 3}],
+  "NS10": [{ id: "NS9", cost: 3}, { id: "NS11", cost: 3}],
+  "NS11": [{ id: "NS10", cost: 3}, { id: "NS13", cost: 3}],
+  "NS13": [{ id: "NS11", cost: 3}, { id: "NS14", cost: 3}],
+  "NS14": [{ id: "NS13", cost: 3}, { id: "NS15", cost: 5}],
+  "NS15": [{ id: "NS14", cost: 5}, { id: "NS16", cost: 2}],
+  "NS16": [{ id: "NS15", cost: 2}, { id: "NS17", cost: 3}],
+  "NS17": [{ id: "NS16", cost: 3}, { id: "NS18", cost: 2}, {id: "CC15", cost: 5}],
+  "NS18": [{ id: "NS17", cost: 2}, { id: "NS19", cost: 2}],
+  "NS19": [{ id: "NS18", cost: 2}, { id: "NS20", cost: 2}],
+  "NS20": [{ id: "NS19", cost: 2}, { id: "NS21", cost: 2}],
+  "NS21": [{ id: "NS20", cost: 2}, { id: "NS22", cost: 2}, {id: "DT11", cost: 5}],
+  "NS22": [{ id: "NS21", cost: 2}, { id: "NS23", cost: 2}],
+  "NS23": [{ id: "NS22", cost: 2}, { id: "NS24", cost: 1}],
+  "NS24": [{ id: "NS23", cost: 1}, { id: "NS25", cost: 2}, {id: "CC1", cost: 5}, {id: "NE6", cost: 5}],
+  "NS25": [{ id: "NS24", cost: 2}, { id: "NS26", cost: 2}],
+  "NS26": [{ id: "NS25", cost: 2}, { id: "NS27", cost: 2}],
+  "NS27": [{ id: "NS26", cost: 2}, { id: "NS28", cost: 2}, {id: "CE2", cost: 5 }],
+  "NS28": [{ id: "NS27", cost: 2}],
   "NE1": [{ id: "NE3", cost: 4 }, { id: "CC29", cost: 5 }],
   "NE3": [{ id: "NE1", cost: 4 }, { id: "NE4", cost: 1 }],
   "NE4": [{ id: "NE3", cost: 1 }, { id: "NE5", cost: 2 }, { id: "DT19", cost: 5 }],
   "NE5": [{ id: "NE4", cost: 2 }, { id: "NE6", cost: 3 }],
-  "NE6": [{ id: "NE5", cost: 3 }, { id: "NE7", cost: 1 }, { id: "CC1", cost: 5 }],
+  "NE6": [{ id: "NE5", cost: 3 }, { id: "NE7", cost: 1 }, { id: "CC1", cost: 5 },{ id: "NS24", cost: 5 },],
   "NE7": [{ id: "NE6", cost: 1 }, { id: "NE8", cost: 1 }, { id: "DT12", cost: 5 }],
   "NE8": [{ id: "NE7", cost: 1 }, { id: "NE9", cost: 2 }],
   "NE9": [{ id: "NE8", cost: 2 }, { id: "NE10", cost: 3 }],
@@ -592,8 +618,8 @@ const mrtStationsAdjacencyList =
   "DT8": [{ id: "DT7", cost: 2 }, { id: "DT9", cost: 2 }],
   "DT9": [{ id: "DT8", cost: 2 }, { id: "DT10", cost: 2 }, { id: "CC19", cost: 5}],
   "DT10": [{ id: "DT9", cost: 2 }, { id: "DT11", cost: 2 }],
-  "DT11": [{ id: "DT10", cost: 2 }, { id: "DT12", cost: 3 }, { id: "NE7", cost: 5 }],
-  "DT12": [{ id: "DT11", cost: 3 }, { id: "DT13", cost: 1 }],
+  "DT11": [{ id: "DT10", cost: 2 }, { id: "DT12", cost: 3 }, { id: "NS21", cost: 5 }],
+  "DT12": [{ id: "DT11", cost: 3 }, { id: "DT13", cost: 1 }, { id: "NE7", cost: 5 }],
   "DT13": [{ id: "DT12", cost: 1 }, { id: "DT14", cost: 2 }],
   "DT14": [{ id: "DT13", cost: 2 }, { id: "DT15", cost: 2 }],
   "DT15": [{ id: "DT16", cost: 2 }, { id: "DT14", cost: 2 }, { id: "CC4", cost: 5 }],
@@ -617,12 +643,12 @@ const mrtStationsAdjacencyList =
   "DT33": [{ id: "DT32", cost: 2 }, { id: "DT34", cost: 3 }],
   "DT34": [{ id: "DT33", cost: 3 }, { id: "DT35", cost: 2 }],
   "DT35": [{ id: "DT34", cost: 2 }],
-  "CC1": [{ id: "CC2", cost: 2 }, { id: "NE6", cost: 5 }],
+  "CC1": [{ id: "CC2", cost: 2 }, { id: "NE6", cost: 5 }, { id: "NS24", cost: 5 },],
   "CC2": [{ id: "CC1", cost: 2 }, { id: "CC3", cost: 1 }],
   "CC3": [{ id: "CC2", cost: 1 }, { id: "CC4", cost: 2 }],
   "CC4": [{ id: "CC3", cost: 2 }, { id: "CC5", cost: 2 }, { id: "CE1", cost: 6 }, { id: "DT15", cost: 5 }],
   "CE1": [{ id: "CC4", cost: 6 }, { id: "CE2", cost: 2 }, { id: "DT16", cost: 5 }],
-  "CE2": [{ id: "CE1", cost: 2 }],
+  "CE2": [{ id: "CE1", cost: 2 }, { id: "NS27", cost: 5 }],
   "CC5": [{ id: "CC4", cost: 2 }, { id: "CC6", cost: 3 }],
   "CC6": [{ id: "CC5", cost: 3 }, { id: "CC7", cost: 1 }],
   "CC7": [{ id: "CC6", cost: 1 }, { id: "CC8", cost: 2 }],
@@ -633,7 +659,7 @@ const mrtStationsAdjacencyList =
   "CC12": [{ id: "CC11", cost: 2 }, { id: "CC13", cost: 3 }],
   "CC13": [{ id: "CC12", cost: 3 }, { id: "CC14", cost: 1 }, { id: "NE12", cost: 5 }],
   "CC14": [{ id: "CC13", cost: 1 }, { id: "CC15", cost: 3 }],
-  "CC15": [{ id: "CC14", cost: 3 }, { id: "CC16", cost: 3 }],
+  "CC15": [{ id: "CC14", cost: 3 }, { id: "CC16", cost: 3 }, { id: "NS17", cost: 5 }],
   "CC16": [{ id: "CC15", cost: 3 }, { id: "CC17", cost: 2 }],
   "CC17": [{ id: "CC16", cost: 2 }, { id: "CC19", cost: 5 }],
   "CC19": [{ id: "CC17", cost: 5 }, { id: "CC20", cost: 2 }, { id: "DT9", cost: 5 }],
