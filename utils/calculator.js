@@ -1,5 +1,9 @@
 import { mrtStationsAdjacencyList } from './mrtStationsData'
 
+function isTransfer(prevPath) {
+    return prevPath?.type === "transfer"
+}
+
 export function findMidpointCandidates(originIds) {
     const djikstraObjects = originIds.map(originId => {
         return djikstra(originId)
@@ -8,9 +12,14 @@ export function findMidpointCandidates(originIds) {
         return {
             stationId,
             timings: djikstraObjects.map(djikstraObject => {
-                return djikstraObject[stationId]
-            }
-            )
+                if (isTransfer(djikstraObject.prevPaths[stationId])) {
+                    return djikstraObject.distanceMap[stationId] - 5;
+                }
+                return djikstraObject.distanceMap[stationId]
+            }),
+            prevPaths: djikstraObjects.map(djikstraObject => {
+                return djikstraObject.prevPaths[stationId]
+            })
         }
     })
     return stationTimings.map((stationTiming) => {
@@ -18,7 +27,7 @@ export function findMidpointCandidates(originIds) {
             stationId: stationTiming.stationId,
             standardDeviation: getStandardDeviation(stationTiming.timings),
             mean: getMean(stationTiming.timings),
-            stationTimings: stationTiming.timings
+            stationTimings: stationTiming.timings,
         }
     })
         .sort((a, b) => a.mean - b.mean)
@@ -37,23 +46,25 @@ function getStandardDeviation(array) {
 }
 
 function djikstra(originId) {
-    let distance = {}
+    let prevPaths = {}
+    let distanceMap = {}
     let queue = []
     Object.keys(mrtStationsAdjacencyList).forEach(stationId => {
-        distance[stationId] = Infinity;
+        distanceMap[stationId] = Infinity;
         queue.push(stationId);
     })
-    distance[originId] = 0
+    distanceMap[originId] = 0
 
     while (queue.length !== 0) {
-        const smallestStationId = queue.reduce((key, v) => distance[v] < distance[key] ? v : key);
+        const smallestStationId = queue.reduce((key, v) => distanceMap[v] < distanceMap[key] ? v : key);
         queue = queue.filter(item => item !== smallestStationId)
         mrtStationsAdjacencyList[smallestStationId].forEach(vertex => {
-            const alt = distance[smallestStationId] + vertex.cost
-            if (alt < distance[vertex.id]) {
-                distance[vertex.id] = alt
+            const newCost = distanceMap[smallestStationId] + vertex.cost
+            if (newCost < distanceMap[vertex.id]) {
+                distanceMap[vertex.id] = newCost
+                prevPaths[vertex.id] = vertex 
             }
         })
     }
-    return distance
+    return {distanceMap, prevPaths}
 }

@@ -58,7 +58,7 @@ function Home() {
       <button className="button" onClick={handleSubmit}>Find Midpoint!</button>
       <ol>
         {results.slice(0, 5).map(result => {
-          return (<li>{
+          return (<li key={result.stationId}>{
             `${result.stationId} ${getStationName(result.stationId)}`}
             <ul>
               <li>{`${result.stationTimings.map((timing, index) => `P${index + 1}: ${timing} mins`).join(', ')}`}</li>
